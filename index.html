@@ -392,17 +392,17 @@
   </button>
   <p class="status-msg" id="statusMsg">ボタンをおしてね</p>
 
+  <button class="send-btn" id="sendBtn" onclick="sendLocation()">
+    <span class="btn-emoji">✉️</span>
+    おうちのひとに おくる
+  </button>
+
   <div class="map-area" id="mapArea">
     <div class="map-container">
       <iframe id="mapFrame" src="about:blank" loading="lazy" referrerpolicy="no-referrer"></iframe>
     </div>
     <div class="location-info" id="locationInfo"></div>
   </div>
-
-  <button class="send-btn" id="sendBtn" onclick="sendLocation()">
-    <span class="btn-emoji">✉️</span>
-    おうちのひとに おくる
-  </button>
 </div>
 
 <!-- ===== 設定画面 ===== -->
@@ -760,7 +760,7 @@ if ('serviceWorker' in navigator) {
   let deferredPrompt = null;
 
   if (window.matchMedia('(display-mode: standalone)').matches || navigator.standalone) return;
-  if (localStorage.getItem('install-dismissed')) return;
+  if (localStorage.getItem('mimamori-install-dismissed')) return;
 
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
@@ -774,7 +774,7 @@ if ('serviceWorker' in navigator) {
     const btn = makeBtn('あとで', 'ib-dismiss');
     btn.addEventListener('click', () => {
       $banner.classList.remove('show');
-      localStorage.setItem('install-dismissed', '1');
+      localStorage.setItem('mimamori-install-dismissed', '1');
     });
     return btn;
   }
@@ -824,7 +824,7 @@ if ('serviceWorker' in navigator) {
 
   window.addEventListener('appinstalled', () => {
     $banner.classList.remove('show');
-    localStorage.setItem('install-dismissed', '1');
+    localStorage.setItem('mimamori-install-dismissed', '1');
   });
 })();
 </script>
