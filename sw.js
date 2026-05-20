@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mimamori-v1';
+const CACHE_NAME = 'mimamori-v2';
 const STATIC_ASSETS = [
   './',
   './index.html',
