@@ -1,6 +1,6 @@
 {
-  "name": "みまもりボタン",
-  "short_name": "みまもり",
+  "name": "いまここボタン",
+  "short_name": "いまここ",
   "description": "こどもがいまいるばしょをおうちのひとにおしらせするアプリ",
   "start_url": "./index.html",
   "display": "standalone",
